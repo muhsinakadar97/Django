@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Main Page</title>
+    <style>
+        ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: goldenrod;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+    </style>
+</head>
+<body>
+    <h1>Main Page</h1>
+    <ul>
+        {% for item_id, item_detail in data.items %}
+            <li><a href="{% url 'detail' item_id %}">{{ item_detail }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
